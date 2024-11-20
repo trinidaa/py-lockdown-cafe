@@ -21,7 +21,7 @@ class Cafe:
         if visitors.get("vaccine") is None:
             raise NotVaccinatedError(
                 f"{visitors.get("name")} should "
-                f"vaccinate before visit cafe"
+                "vaccinate before visit cafe"
             )
         elif (
             visitors["vaccine"].get("expiration_date") < datetime.date.today()
@@ -29,7 +29,7 @@ class Cafe:
         ):
             raise OutdatedVaccineError(
                 f"{visitors.get("name")} should renew "
-                f"vaccine before visit cafe"
+                "vaccine before visit cafe"
             )
         elif visitors.get("wearing_a_mask") is False or None:
             raise NotWearingMaskError(

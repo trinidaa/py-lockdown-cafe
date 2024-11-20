@@ -17,15 +17,15 @@ class Cafe:
     ) -> str:
         if visitors.get("vaccine") is None:
             raise NotVaccinatedError(
-                f"{visitors.get("name")} should "
+                "Visitors should "
                 "vaccinate before visit cafe")
         elif (visitors["vaccine"].get("expiration_date") <
                 datetime.date.today()):
             raise OutdatedVaccineError(
-                f"{visitors.get("name")} should renew "
+                "Visitors should renew "
                 "vaccine before visit cafe")
         elif visitors.get("wearing_a_mask") is False or None:
             raise NotWearingMaskError(
-                f"Visitor {visitors.get("name")} is not wearing a mask")
+                "Visitor is not wearing a mask")
         else:
             return f"Welcome to {self.name}"
